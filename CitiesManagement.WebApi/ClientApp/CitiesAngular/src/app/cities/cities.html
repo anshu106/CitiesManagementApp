@@ -1,0 +1,34 @@
+<p>cities works!</p>
+<h2>Cities</h2>
+<div>
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>City Name</th>
+            </tr>
+        </thead>
+        <tbody>
+           
+            
+                <tr>
+                  @for (city of cities; track cities) {
+                    <td>{{ city.cityName }}</td>
+                  }
+                </tr>
+        
+        </tbody>
+    </table>
+</div>
+
+<!-- <div>
+    <h2>City Names</h2>
+
+    <ul>
+      @for (city of cities; track cities) {
+       
+        <li>{{city.cityId}}</li>
+        <li>{{ city.cityName }}</li>
+      }
+    </ul>
+</div> -->
