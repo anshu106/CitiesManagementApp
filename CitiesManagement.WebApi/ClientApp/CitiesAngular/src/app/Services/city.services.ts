@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
 import { City } from '../models/city';
+import {HttpClient} from '@angular/common/http';
+import { Observable } from '../../../node_modules/rxjs/dist/types/internal/Observable';
 
-import {HttpClient} from "@angular/common/http";
-import {Observable} from "rjxs";
+// import {HttpClient} from "@angular/common/http";
+// import {Observable} from "rjxs";
 
 @Injectable({
   providedIn: 'root',
@@ -21,10 +23,15 @@ export class CityServices {
 //     new City("105", "Manhattan"),
 //   ];
 // }
-constructor (private http : HttpClient)
+// public getCities(){
+//   return this.cities;
+// }
+
+//data from backend
+constructor (private httpClient : HttpClient)
 {}
   public getCities() :Observable<City[]>
   {
-    return this.http.get<City[]>("http://localhost:5292");
+    return this.httpClient.get<City[]>("http://localhost:5292/cities");
   }
 }

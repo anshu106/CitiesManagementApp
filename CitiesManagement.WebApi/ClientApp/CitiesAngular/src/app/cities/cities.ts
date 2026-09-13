@@ -16,15 +16,18 @@ export class Cities {
   {
 
   }
+  // ngOnInit()
+  // {
+  //   this.cities= this.cityServices.getCities();
+  // }
   ngOnInit()
   {
-    this.cityServices.getCities().subscribe(
-      (response : City[])=>{
-        this.cities= response;
-      },
-      (error: any)=>{},
-      ()=> {}
-    );
+    this.cityServices.getCities()
+    .subscribe({
+     next: (response : City[])=>{this.cities= response;},
+     error: (error: any)=>{console.log(error)},
+    complete:  ()=> {}
+     } );
   }
   
 }
