@@ -34,4 +34,9 @@ constructor (private httpClient : HttpClient)
   {
     return this.httpClient.get<City[]>("http://localhost:5292/cities");
   }
+
+  public postCity(city : City) :Observable<City>
+  {
+    return this.httpClient.Post<City>("http://localhost:5292/cities");
+  }
 }
